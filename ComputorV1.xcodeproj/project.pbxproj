@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CF43C28A227DF8C400D98761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C289227DF8C400D98761 /* AppDelegate.swift */; };
-		CF43C28C227DF8C400D98761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C28B227DF8C400D98761 /* ViewController.swift */; };
 		CF43C28F227DF8C400D98761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C28D227DF8C400D98761 /* Main.storyboard */; };
 		CF43C291227DF8C400D98761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF43C290227DF8C400D98761 /* Assets.xcassets */; };
 		CF43C294227DF8C400D98761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */; };
 		CF43C29F227DF8C400D98761 /* ComputorV1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C29E227DF8C400D98761 /* ComputorV1Tests.swift */; };
 		CF43C2AA227DF8C400D98761 /* ComputorV1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C2A9227DF8C400D98761 /* ComputorV1UITests.swift */; };
+		CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		CF43C286227DF8C400D98761 /* ComputorV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputorV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF43C289227DF8C400D98761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF43C28B227DF8C400D98761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF43C28E227DF8C400D98761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF43C290227DF8C400D98761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF43C293227DF8C400D98761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		CF43C2A5227DF8C400D98761 /* ComputorV1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComputorV1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF43C2A9227DF8C400D98761 /* ComputorV1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputorV1UITests.swift; sourceTree = "<group>"; };
 		CF43C2AB227DF8C400D98761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputorV1ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				CF43C289227DF8C400D98761 /* AppDelegate.swift */,
-				CF43C28B227DF8C400D98761 /* ViewController.swift */,
 				CF43C28D227DF8C400D98761 /* Main.storyboard */,
+				CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */,
 				CF43C290227DF8C400D98761 /* Assets.xcassets */,
 				CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */,
 				CF43C295227DF8C400D98761 /* Info.plist */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF43C28C227DF8C400D98761 /* ViewController.swift in Sources */,
+				CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */,
 				CF43C28A227DF8C400D98761 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
