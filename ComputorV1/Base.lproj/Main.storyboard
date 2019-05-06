@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Arial.ttf">
-            <string>ArialMT</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--ComputorV1 View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -38,7 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tdn-uo-iWY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" red="1" green="0.88083262610000002" blue="0.95647193350000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -46,22 +41,75 @@
                                     <action selector="calculateButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZd-jR-ltZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vy-Xh-la0">
+                                <rect key="frame" x="32" y="384" width="311" height="199.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduced form: 4 * X^0 + 4 * X^1 - 9.3 * X^2 = 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J47-Y8-7Rj">
+                                        <rect key="frame" x="8" y="16" width="295" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polynomial degree: 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-yD-6Zk">
+                                        <rect key="frame" x="8" y="65" width="295" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discriminant is strictly positive, the two solutions are:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaS-oM-WfD">
+                                        <rect key="frame" x="8" y="93.5" width="295" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-zf-mcD">
+                                        <rect key="frame" x="8" y="142.5" width="295" height="41"/>
+                                        <string key="text">0.905239-0.475131</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QaS-oM-WfD" secondAttribute="trailing" constant="8" id="Rdd-fs-Jgu"/>
+                                    <constraint firstItem="J47-Y8-7Rj" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="S41-Rr-nX0"/>
+                                    <constraint firstItem="J47-Y8-7Rj" firstAttribute="top" secondItem="7Vy-Xh-la0" secondAttribute="top" constant="16" id="V0E-VL-Roh"/>
+                                    <constraint firstAttribute="trailing" secondItem="AvM-yD-6Zk" secondAttribute="trailing" constant="8" id="WEb-1g-mcY"/>
+                                    <constraint firstItem="AvM-yD-6Zk" firstAttribute="top" secondItem="J47-Y8-7Rj" secondAttribute="bottom" constant="8" id="WkI-3D-ZqV"/>
+                                    <constraint firstAttribute="trailing" secondItem="J47-Y8-7Rj" secondAttribute="trailing" constant="8" id="aNf-0u-N8C"/>
+                                    <constraint firstAttribute="trailing" secondItem="aLz-zf-mcD" secondAttribute="trailing" constant="8" id="bc0-Wz-aYW"/>
+                                    <constraint firstItem="QaS-oM-WfD" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="dtb-Lm-u7G"/>
+                                    <constraint firstItem="aLz-zf-mcD" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="eQq-k9-f5h"/>
+                                    <constraint firstAttribute="bottom" secondItem="aLz-zf-mcD" secondAttribute="bottom" constant="16" id="emo-Zv-5Ud"/>
+                                    <constraint firstItem="AvM-yD-6Zk" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="jkS-LL-FZq"/>
+                                    <constraint firstItem="QaS-oM-WfD" firstAttribute="top" secondItem="AvM-yD-6Zk" secondAttribute="bottom" constant="8" id="kJL-Nb-wxX"/>
+                                    <constraint firstItem="aLz-zf-mcD" firstAttribute="top" secondItem="QaS-oM-WfD" secondAttribute="bottom" constant="8" id="msY-cg-Tcs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.88083262612729396" blue="0.95647193352861593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="1" green="0.82396444933744339" blue="0.97756965181796407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="VqA-i0-D4T" firstAttribute="top" secondItem="BO5-Oc-4E5" secondAttribute="bottom" constant="32" id="6RD-7h-YJe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BO5-Oc-4E5" secondAttribute="trailing" constant="32" id="Aay-30-Yl4"/>
+                            <constraint firstItem="7Vy-Xh-la0" firstAttribute="top" secondItem="VqA-i0-D4T" secondAttribute="bottom" constant="32" id="ZoJ-wh-kY2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Vy-Xh-la0" secondAttribute="trailing" constant="32" id="edT-0f-dJ0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VqA-i0-D4T" secondAttribute="trailing" constant="100" id="jSz-2i-b8W"/>
                             <constraint firstItem="BO5-Oc-4E5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ldW-7Y-EgC"/>
+                            <constraint firstItem="7Vy-Xh-la0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="oLd-nP-Alt"/>
                             <constraint firstItem="BO5-Oc-4E5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ogt-wT-EQC"/>
                             <constraint firstItem="VqA-i0-D4T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="ybu-FX-M9x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ReducedFormLabel" destination="J47-Y8-7Rj" id="Giv-t7-bEz"/>
                         <outlet property="calculateButtonOutlet" destination="VqA-i0-D4T" id="HQj-nX-6n4"/>
+                        <outlet property="discriminantStatusLabel" destination="QaS-oM-WfD" id="IyB-kY-wqO"/>
                         <outlet property="inputTextField" destination="BO5-Oc-4E5" id="oRz-t7-Ccz"/>
+                        <outlet property="polynomialDegreeLabel" destination="AvM-yD-6Zk" id="As4-ov-5eI"/>
+                        <outlet property="solutionsLabel" destination="aLz-zf-mcD" id="on7-71-2bK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
