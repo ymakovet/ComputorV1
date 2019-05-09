@@ -27,14 +27,18 @@ class ComputorV1ViewController: UIViewController {
     
     //"5 + 4 * X + X^2= X^2"
     //"5 * X^0 + 4 * X^1 = 4 * X^0"
-    //"5 * X^0 + 4 * X^1 + 9.3 * X^2 = 1 * X^0"
+    //"5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
     //"5 * X^0 + 4 * X^1 = 4 * X^0
     var reducedForm = ""
     var discriminantStatusText = "The solution is:"
+    var solutionText = ""
     var a: Float?
     var b: Float?
     var c: Float?
+    var discriminant: Float?
     var polynomialDegree = 0
+    
+    let zero: Float = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,11 +72,19 @@ class ComputorV1ViewController: UIViewController {
 //        if inputArr[0].contains("-") {
 //
 //        }
-        let left = inputArr[0].split(separator: "+")
-//        let neR = inputArr[1].replacingOccurrences(of: " ", with: "")
+        let leftbyplus = inputArr[0].replacingOccurrences(of: "+", with: " +")//inputArr[0].split(separator: "+")
+        let leftbyminus = leftbyplus.replacingOccurrences(of: "-", with: " -")
+        let left = leftbyminus.split(separator: " ")
         let right = inputArr[1].split(separator: "*")
-        let multiplicandsRight = String(right[0])
-        let multiplierRight = String(right[1])
+        var multiplicandsRight = ""
+        var multiplierRight = ""
+        if right.count > 1 {
+            multiplicandsRight = String(right[0])
+            multiplierRight = String(right[1])
+        } else {
+            multiplicandsRight = "1"
+            multiplierRight = String(right[0])
+        }
         print("newString", newString)
         print("inputArr", inputArr)
         print("left", left)
@@ -81,20 +93,51 @@ class ComputorV1ViewController: UIViewController {
         
         for item in left {
             let mult = item.split(separator: "*")
-            let degree =  String(mult[1])
-
-            switch degree {
-            case "X^0":
-                self.c = Float(mult[0])
-            case "X^1":
-                self.b = Float(mult[0])
-                polynomialDegree = polynomialDegree < 1 ? 1 : polynomialDegree
-            case "X^2":
-                self.a = Float(mult[0])
-                polynomialDegree = polynomialDegree < 2 ? 2 : polynomialDegree
-            default:
-                let errorText = "The polynomial degree is stricly greater than 2, I can't solve."
-                return (false, errorText, nil, nil)
+            var degree = ""
+            if mult.count > 1 {
+                degree =  String(mult[1])
+                switch degree {
+                case "X^0":
+                    self.c = Float(mult[0])
+                case "X^1", "X":
+                    self.b = Float(mult[0])
+                    polynomialDegree = polynomialDegree < 1 ? 1 : polynomialDegree
+                case "X^2":
+                    self.a = Float(mult[0])
+                    polynomialDegree = polynomialDegree < 2 ? 2 : polynomialDegree
+                default:
+                    let errorText = "The polynomial degree is stricly greater than 2, I can't solve."
+                    return (false, errorText, nil, nil)
+                }
+            } else {
+                degree = String(mult[0])
+                
+                switch degree {
+                case "X^0", "+X^0":
+                    self.c = 1
+                case "-X^0":
+                    self.c = -1
+                case "X^1", "X", "+X^1", "+X":
+                    self.b = 1
+                    polynomialDegree = polynomialDegree < 1 ? 1 : polynomialDegree
+                case "-X^1", "-X":
+                    self.b = -1
+                    polynomialDegree = polynomialDegree < 1 ? 1 : polynomialDegree
+                case "X^2", "+X^2":
+                    self.a = 1
+                    polynomialDegree = polynomialDegree < 2 ? 2 : polynomialDegree
+                case "-X^2":
+                    self.a = -1
+                    polynomialDegree = polynomialDegree < 2 ? 2 : polynomialDegree
+                default:
+                    if (Float(degree) != nil) {
+                        self.c = Float(degree)
+                        break
+                    }
+                    let errorText = "The polynomial degree is stricly greater than 2, I can't solve."
+                    return (false, errorText, nil, nil)
+                }
+                
             }
         }
         print("a", a, "b", b, "c", c)
@@ -115,19 +158,36 @@ class ComputorV1ViewController: UIViewController {
            print("The polynomial degree is stricly greater than 2, I can't solve.")
             return ""
         }
-        return "\(a!) * X^2 + \(b!) * X^1 + \(c!) * X^0 = 0"
-    }
-    
-    private func solution(discriminant: Float) {
-        //-b + \d /2a //-b - \d /2a
-        var negativeB = 0 - b!
-        var sqrtD = sqrtf(discriminant)
-        let x1 = (negativeB + sqrtD) / (2 * a!)
-        print(x1)
-        if discriminant > 0 {
-            let x2 = 0 - b! - sqrtf(discriminant) / 2 * a!
-            print(x2)
+        var result = ""
+        result += a! != zero ? "\(String(a!)) * X^2" : ""
+        switch b! {
+        case 1... :
+            result += result.count > 0 ? " + " : ""
+            result += "\(String(b!)) * X"
+        case 1 :
+            result += result.count > 0 ? " + " : ""
+            result += "X"
+        case -1 :
+            result += result.count > 0 ? " - " : "-"
+            result += "X"
+        case ..<0 :
+            result += result.count > 0 ? " - " : "-"
+            result += "\(String(-b!)) * X"
+        default:
+            break
         }
+        switch c! {
+        case 0... :
+            result += result.count > 0 ? " + " : ""
+            result += "\(String(c!))"
+        case ..<0 :
+            result += result.count > 0 ? " - " : "-"
+            result += "\(String(-b!))"
+        default:
+            break
+        }
+        result += result.count > 0 ? " = 0" : ""
+        return result
     }
     
     private func findDiscriminant() -> Float {
@@ -143,16 +203,51 @@ class ComputorV1ViewController: UIViewController {
         return discriminant
     }
     
+    private func quadraticEquationSolution(discriminant: Float) {
+        //-b + \d /2a //-b - \d /2a
+        let negativeB = 0 - b!
+        let sqrtD = sqrtf(discriminant)
+        let x1 = (negativeB + sqrtD) / (2 * a!)
+        print("x1", x1)
+        solutionText = String(x1)
+        if discriminant > 0 {
+            let x2 = (negativeB - sqrtD) / (2 * a!)
+            print("x2", x2)
+            solutionText += "\n" + String(x2)
+        }
+    }
+    
+    private func simpleEquationSolution() -> Float {
+        self.c = 0 - c!
+        let x = c! / b!
+        print("x", x)
+        solutionText = String(x)
+        return x
+    }
+    
+    
     @IBAction func calculateButtonAction(_ sender: Any) {
         guard let inputString = inputTextField.text, inputString != "" else { return }
         
         let isParsing = parsingEquation(input: inputString)
         if isParsing.result == true {
             reducedForm = equationReduction(multiplicands: isParsing.multiplicands!, multiplier: isParsing.multiplier!)
-            let discriminant = findDiscriminant()
-            if discriminant >= 0 {
-                solution(discriminant: discriminant)
+            if self.a == 0 {
+                polynomialDegree = 1
+                simpleEquationSolution()
+            } else {
+                discriminant = findDiscriminant()
+                if discriminant! >= zero {
+                    quadraticEquationSolution(discriminant: discriminant!)
+                }
+                discriminantStatusLabel.text = discriminant! > zero ? discriminantPositiveText : discriminantNegativeText
             }
+            
+            ReducedFormLabel.text = reducedFormText + " " + reducedForm
+            polynomialDegreeLabel.text = polynomialDegreeText + " " + String(polynomialDegree)
+            discriminantStatusLabel.text = discriminant == nil ? discriminantStatusText : discriminantStatusLabel.text
+            solutionsLabel.text = solutionText
+            
         } else {
             ReducedFormLabel.text = reducedFormText
             polynomialDegreeLabel.text = polynomialDegreeText
@@ -161,31 +256,4 @@ class ComputorV1ViewController: UIViewController {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-
-
-//            let forMinus = inputArr[0].split(separator: "-")
-//            var forPlus: [Substring] = []
-//            var ostatok: Substring = ""
-//            if forMinus[0].contains("+") {
-//                forPlus = forMinus[0].split(separator: "+")
-//                ostatok = forMinus[1]
-//            } else if forMinus[1].contains("+") {
-//                forPlus = forMinus[1].split(separator: "+")
-//                ostatok = forMinus[0]
-//            }
-//            if forPlus.count > 0 {
-//                forPlus.append(ostatok)
-//
-//            }
