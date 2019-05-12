@@ -29,6 +29,7 @@ class ComputorV1ViewController: UIViewController {
     //"5 * X^0 + 4 * X^1 = 4 * X^0"
     //"5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
     //"5 * X^0 + 4 * X^1 = 4 * X^0
+    //42 * X^0 = 42 * X^0
     var reducedForm = ""
     var discriminantStatusText = "The solution is:"
     var solutionText = ""
@@ -115,6 +116,7 @@ class ComputorV1ViewController: UIViewController {
                 switch degree {
                 case "X^0", "+X^0":
                     self.c = 1
+//                    polynomialDegree = polynomialDegree < 0 ? 0 : polynomialDegree
                 case "-X^0":
                     self.c = -1
                 case "X^1", "X", "+X^1", "+X":
@@ -159,32 +161,40 @@ class ComputorV1ViewController: UIViewController {
             return ""
         }
         var result = ""
-        result += a! != zero ? "\(String(a!)) * X^2" : ""
-        switch b! {
-        case 1... :
-            result += result.count > 0 ? " + " : ""
-            result += "\(String(b!)) * X"
-        case 1 :
-            result += result.count > 0 ? " + " : ""
-            result += "X"
-        case -1 :
-            result += result.count > 0 ? " - " : "-"
-            result += "X"
-        case ..<0 :
-            result += result.count > 0 ? " - " : "-"
-            result += "\(String(-b!)) * X"
-        default:
-            break
+        if a != nil, a != 0 {
+            result += a! != zero ? "\(a!.clean) * X^2" : ""
         }
-        switch c! {
-        case 0... :
-            result += result.count > 0 ? " + " : ""
-            result += "\(String(c!))"
-        case ..<0 :
-            result += result.count > 0 ? " - " : "-"
-            result += "\(String(-b!))"
-        default:
-            break
+        if b != nil {
+            switch b! {
+            case 1... :
+                result += result.count > 0 ? " + " : ""
+                result += "\(b!.clean) * X"
+            case 1 :
+                result += result.count > 0 ? " + " : ""
+                result += "X"
+            case -1 :
+                result += result.count > 0 ? " - " : "-"
+                result += "X"
+            case ..<0 :
+                result += result.count > 0 ? " - " : "-"
+                let positiveB = b! * (-1)
+                result += "\(positiveB.clean) * X"
+            default:
+                break
+            }
+        }
+        if c != nil {
+            switch c! {
+            case 0... :
+                result += result.count > 0 ? " + " : ""
+                result += "\(c!.clean)"
+            case ..<0 :
+                result += result.count > 0 ? " - " : "-"
+                let positiveC = c! * (-1)
+                result += "\(positiveC.clean)"
+            default:
+                break
+            }
         }
         result += result.count > 0 ? " = 0" : ""
         return result
@@ -209,20 +219,19 @@ class ComputorV1ViewController: UIViewController {
         let sqrtD = sqrtf(discriminant)
         let x1 = (negativeB + sqrtD) / (2 * a!)
         print("x1", x1)
-        solutionText = String(x1)
+        solutionText = x1.clean
         if discriminant > 0 {
             let x2 = (negativeB - sqrtD) / (2 * a!)
-            print("x2", x2)
-            solutionText += "\n" + String(x2)
+            print("x2", x2.clean)
+            solutionText += "\n" + x2.clean
         }
     }
     
-    private func simpleEquationSolution() -> Float {
+    private func simpleEquationSolution() {
         self.c = 0 - c!
         let x = c! / b!
         print("x", x)
-        solutionText = String(x)
-        return x
+        solutionText = x.clean
     }
     
     
@@ -232,8 +241,9 @@ class ComputorV1ViewController: UIViewController {
         let isParsing = parsingEquation(input: inputString)
         if isParsing.result == true {
             reducedForm = equationReduction(multiplicands: isParsing.multiplicands!, multiplier: isParsing.multiplier!)
-            if self.a == 0 {
-                polynomialDegree = 1
+            if polynomialDegree == 0, reducedForm == "0 = 0" {
+                discriminantStatusText = "All the real numbers are solution"
+            } else if self.a == nil || self.a == 0 {
                 simpleEquationSolution()
             } else {
                 discriminant = findDiscriminant()
@@ -256,4 +266,19 @@ class ComputorV1ViewController: UIViewController {
         }
     }
     
+    func clean() {
+        reducedForm = ""
+        solutionText = ""
+        discriminant = nil
+        polynomialDegree = 0
+        discriminantStatusText = "The solution is:"
+        discriminantStatusLabel.text = ""
+    }
+    
+}
+
+extension Float {
+    var clean: String {
+        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+    }
 }
