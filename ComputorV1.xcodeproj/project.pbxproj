@@ -12,24 +12,8 @@
 		CF43C291227DF8C400D98761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF43C290227DF8C400D98761 /* Assets.xcassets */; };
 		CF43C294227DF8C400D98761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */; };
 		CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */; };
+		CFD05E7323FDAAC900CC6DAE /* Comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05E7223FDAAC900CC6DAE /* Comp.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CF43C29B227DF8C400D98761 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF43C27E227DF8C300D98761 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF43C285227DF8C400D98761;
-			remoteInfo = ComputorV1;
-		};
-		CF43C2A6227DF8C400D98761 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF43C27E227DF8C300D98761 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF43C285227DF8C400D98761;
-			remoteInfo = ComputorV1;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CF43C286227DF8C400D98761 /* ComputorV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputorV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,27 +22,12 @@
 		CF43C290227DF8C400D98761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF43C293227DF8C400D98761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF43C295227DF8C400D98761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF43C29A227DF8C400D98761 /* ComputorV1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComputorV1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF43C2A5227DF8C400D98761 /* ComputorV1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComputorV1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputorV1ViewController.swift; sourceTree = "<group>"; };
+		CFD05E7223FDAAC900CC6DAE /* Comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CF43C283227DF8C400D98761 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF43C297227DF8C400D98761 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF43C2A2227DF8C400D98761 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,8 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				CF43C286227DF8C400D98761 /* ComputorV1.app */,
-				CF43C29A227DF8C400D98761 /* ComputorV1Tests.xctest */,
-				CF43C2A5227DF8C400D98761 /* ComputorV1UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +59,7 @@
 				CF43C289227DF8C400D98761 /* AppDelegate.swift */,
 				CF43C28D227DF8C400D98761 /* Main.storyboard */,
 				CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */,
+				CFD05E7223FDAAC900CC6DAE /* Comp.swift */,
 				CF43C290227DF8C400D98761 /* Assets.xcassets */,
 				CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */,
 				CF43C295227DF8C400D98761 /* Info.plist */,
@@ -119,42 +87,6 @@
 			productReference = CF43C286227DF8C400D98761 /* ComputorV1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF43C299227DF8C400D98761 /* ComputorV1Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF43C2B1227DF8C400D98761 /* Build configuration list for PBXNativeTarget "ComputorV1Tests" */;
-			buildPhases = (
-				CF43C296227DF8C400D98761 /* Sources */,
-				CF43C297227DF8C400D98761 /* Frameworks */,
-				CF43C298227DF8C400D98761 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF43C29C227DF8C400D98761 /* PBXTargetDependency */,
-			);
-			name = ComputorV1Tests;
-			productName = ComputorV1Tests;
-			productReference = CF43C29A227DF8C400D98761 /* ComputorV1Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CF43C2A4227DF8C400D98761 /* ComputorV1UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF43C2B4227DF8C400D98761 /* Build configuration list for PBXNativeTarget "ComputorV1UITests" */;
-			buildPhases = (
-				CF43C2A1227DF8C400D98761 /* Sources */,
-				CF43C2A2227DF8C400D98761 /* Frameworks */,
-				CF43C2A3227DF8C400D98761 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF43C2A7227DF8C400D98761 /* PBXTargetDependency */,
-			);
-			name = ComputorV1UITests;
-			productName = ComputorV1UITests;
-			productReference = CF43C2A5227DF8C400D98761 /* ComputorV1UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,16 +100,6 @@
 					CF43C285227DF8C400D98761 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-					};
-					CF43C299227DF8C400D98761 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = CF43C285227DF8C400D98761;
-					};
-					CF43C2A4227DF8C400D98761 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = CF43C285227DF8C400D98761;
 					};
 				};
 			};
@@ -195,8 +117,6 @@
 			projectRoot = "";
 			targets = (
 				CF43C285227DF8C400D98761 /* ComputorV1 */,
-				CF43C299227DF8C400D98761 /* ComputorV1Tests */,
-				CF43C2A4227DF8C400D98761 /* ComputorV1UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,20 +132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF43C298227DF8C400D98761 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF43C2A3227DF8C400D98761 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,39 +139,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD05E7323FDAAC900CC6DAE /* Comp.swift in Sources */,
 				CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */,
 				CF43C28A227DF8C400D98761 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF43C296227DF8C400D98761 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF43C2A1227DF8C400D98761 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CF43C29C227DF8C400D98761 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF43C285227DF8C400D98761 /* ComputorV1 */;
-			targetProxy = CF43C29B227DF8C400D98761 /* PBXContainerItemProxy */;
-		};
-		CF43C2A7227DF8C400D98761 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF43C285227DF8C400D98761 /* ComputorV1 */;
-			targetProxy = CF43C2A6227DF8C400D98761 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CF43C28D227DF8C400D98761 /* Main.storyboard */ = {
@@ -399,13 +279,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MU57297YJS;
 				INFOPLIST_FILE = ComputorV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,75 +294,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MU57297YJS;
 				INFOPLIST_FILE = ComputorV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CF43C2B2227DF8C400D98761 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ComputorV1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComputorV1.app/ComputorV1";
-			};
-			name = Debug;
-		};
-		CF43C2B3227DF8C400D98761 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ComputorV1Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComputorV1.app/ComputorV1";
-			};
-			name = Release;
-		};
-		CF43C2B5227DF8C400D98761 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ComputorV1UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ComputorV1;
-			};
-			name = Debug;
-		};
-		CF43C2B6227DF8C400D98761 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ComputorV1UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ymakovet.ComputorV1UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ComputorV1;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -503,24 +321,6 @@
 			buildConfigurations = (
 				CF43C2AF227DF8C400D98761 /* Debug */,
 				CF43C2B0227DF8C400D98761 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF43C2B1227DF8C400D98761 /* Build configuration list for PBXNativeTarget "ComputorV1Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF43C2B2227DF8C400D98761 /* Debug */,
-				CF43C2B3227DF8C400D98761 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF43C2B4227DF8C400D98761 /* Build configuration list for PBXNativeTarget "ComputorV1UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF43C2B5227DF8C400D98761 /* Debug */,
-				CF43C2B6227DF8C400D98761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
