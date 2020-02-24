@@ -40,32 +40,28 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vy-Xh-la0">
-                                <rect key="frame" x="32" y="276" width="311" height="200"/>
+                                <rect key="frame" x="32" y="276" width="311" height="199.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reduced form: 4 * X^0 + 4 * X^1 - 9.3 * X^2 = 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J47-Y8-7Rj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduced form: 4 * X^0 + 4 * X^1 - 9.3 * X^2 = 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J47-Y8-7Rj">
                                         <rect key="frame" x="8" y="16" width="295" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Polynomial degree: 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-yD-6Zk">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polynomial degree: 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-yD-6Zk">
                                         <rect key="frame" x="8" y="65" width="295" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discriminant is strictly positive, the two solutions are:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaS-oM-WfD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discriminant is strictly positive, the two solutions are:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaS-oM-WfD">
                                         <rect key="frame" x="8" y="93.5" width="295" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-zf-mcD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-zf-mcD">
                                         <rect key="frame" x="8" y="142.5" width="295" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">0.905239
 -0.475131</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -75,7 +71,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="lNw-sY-nHW"/>
+                                    <constraint firstAttribute="trailing" secondItem="J47-Y8-7Rj" secondAttribute="trailing" constant="8" id="1kz-M3-0fy"/>
+                                    <constraint firstItem="aLz-zf-mcD" firstAttribute="top" secondItem="QaS-oM-WfD" secondAttribute="bottom" constant="8" id="4To-Ht-Opf"/>
+                                    <constraint firstItem="aLz-zf-mcD" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="Bd8-Lr-j88"/>
+                                    <constraint firstItem="AvM-yD-6Zk" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="DQb-XC-og7"/>
+                                    <constraint firstAttribute="trailing" secondItem="AvM-yD-6Zk" secondAttribute="trailing" constant="8" id="PRf-Jy-Ypa"/>
+                                    <constraint firstAttribute="trailing" secondItem="aLz-zf-mcD" secondAttribute="trailing" constant="8" id="Rpb-QJ-rH3"/>
+                                    <constraint firstItem="QaS-oM-WfD" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="ZRz-CW-Sve"/>
+                                    <constraint firstItem="AvM-yD-6Zk" firstAttribute="top" secondItem="J47-Y8-7Rj" secondAttribute="bottom" constant="8" id="ZZj-RT-7PY"/>
+                                    <constraint firstItem="QaS-oM-WfD" firstAttribute="top" secondItem="AvM-yD-6Zk" secondAttribute="bottom" constant="8" id="aCU-kv-zWO"/>
+                                    <constraint firstAttribute="bottom" secondItem="aLz-zf-mcD" secondAttribute="bottom" constant="16" id="nxM-ki-Ml3"/>
+                                    <constraint firstAttribute="trailing" secondItem="QaS-oM-WfD" secondAttribute="trailing" constant="8" id="pFO-fE-dlx"/>
+                                    <constraint firstItem="J47-Y8-7Rj" firstAttribute="leading" secondItem="7Vy-Xh-la0" secondAttribute="leading" constant="8" id="wg3-nE-1dc"/>
+                                    <constraint firstItem="J47-Y8-7Rj" firstAttribute="top" secondItem="7Vy-Xh-la0" secondAttribute="top" constant="16" id="zAu-UK-Yov"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="122-e7-EA8">
@@ -98,11 +106,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="X^2">
+                                        <state key="normal" title="X^">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTapSecondShortcutWithX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HD5-oI-sqx"/>
+                                            <action selector="didTapPowerShortcutWith:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XnO-Sb-omg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-v3-sd1">
@@ -110,11 +118,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="X^1">
+                                        <state key="normal" title="+">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTapThirdShortcutWithX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TR9-D2-keo"/>
+                                            <action selector="didTapPlusShortcut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8V-Sr-Bd1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7E-gb-ayb">
@@ -122,11 +130,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="^">
+                                        <state key="normal" title="-">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTapPowerShortcutWith:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1w-4r-frA"/>
+                                            <action selector="didTapMinusShortcut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ew9-Lr-bJ9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-9G-hbn">
@@ -183,13 +191,14 @@
                         <outlet property="equalShortcutWith" destination="8d8-B5-qt2" id="QaB-o1-f5v"/>
                         <outlet property="firstShortcutWithX" destination="dgd-wK-evD" id="Zag-Ey-p0R"/>
                         <outlet property="inputTextField" destination="BO5-Oc-4E5" id="oRz-t7-Ccz"/>
+                        <outlet property="minusShortcut" destination="x7E-gb-ayb" id="CA4-Ue-7bH"/>
                         <outlet property="multiplicationShortcut" destination="VCD-9G-hbn" id="ay3-aD-c3f"/>
+                        <outlet property="plusShortcut" destination="cGI-v3-sd1" id="zSU-yV-KzK"/>
                         <outlet property="polynomialDegreeLabel" destination="AvM-yD-6Zk" id="As4-ov-5eI"/>
-                        <outlet property="powerShortcutWith" destination="x7E-gb-ayb" id="ixI-Mh-Sag"/>
+                        <outlet property="powerShortcutWith" destination="SdV-yY-QOA" id="JL8-GN-53g"/>
+                        <outlet property="reducedFormLabel" destination="J47-Y8-7Rj" id="Q8v-SV-Dce"/>
                         <outlet property="resultView" destination="7Vy-Xh-la0" id="3cd-kE-gNm"/>
-                        <outlet property="secondShortcutWithX" destination="SdV-yY-QOA" id="flr-BE-IyG"/>
                         <outlet property="solutionsLabel" destination="aLz-zf-mcD" id="on7-71-2bK"/>
-                        <outlet property="thirdShortcutWithX" destination="cGI-v3-sd1" id="Bo7-Z8-UVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
