@@ -10,6 +10,8 @@ import UIKit
 
 final class ComputorV1ViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var inputTextField: UITextField!
     
     @IBOutlet weak var resultView: UIView!
@@ -28,34 +30,26 @@ final class ComputorV1ViewController: UIViewController {
     @IBOutlet weak var multiplicationShortcut: UIButton!
     @IBOutlet weak var equalShortcutWith: UIButton!
     
+    // MARK: - Stored Properties
     
     private var radius: CGFloat = 10
     private let reducedFormText = "Reduced form: "
     private let polynomialDegreeText = "Polynomial degree: "
     private let discriminantPositiveText = "Discriminant is strictly positive, the two solutions are: "
     private let discriminantNegativeText = "The discriminant is strictly negative, there is no solution."
-    
-    //"5 + 4 * X + X^2= X^2"
-    //"5 * X^0 + 4 * X^1 = 4 * X^0"
-    //"5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
-    //"5 * X^0 + 4 * X^1 = 4 * X^0
-    //42 * X^0 = 42 * X^0
-    private var reducedForm = ""
     private var discriminantStatusText = "The solution is:"
-    private var solutionText = ""
   
     private var discriminant: Float?
     private var polynomialDegree = 0
-    
     private let zero: Float = 0
     
-    private var solutioner: Comp!
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        solutioner = Comp(delegate: self)
         inputTextField.keyboardType = .numberPad
-       setupButtons()
+        inputTextField.clearButtonMode = .always
+        setupButtons()
     }
     
     
@@ -71,11 +65,11 @@ final class ComputorV1ViewController: UIViewController {
         equalShortcutWith.layer.cornerRadius = radius
     }
     
- 
+    // MARK: - IBActions
     
     @IBAction func didTapFirstShortcutWithX(_ sender: Any) {
         if inputTextField.text!.count > 0 {
-             inputTextField.text = inputTextField.text! + "*X^"
+            inputTextField.text = inputTextField.text! + "*X^"
         }
     }
     
@@ -84,7 +78,9 @@ final class ComputorV1ViewController: UIViewController {
     }
     
     @IBAction func didTapPlusShortcut(_ sender: Any) {
-        inputTextField.text = (inputTextField.text ?? "") + "+"
+        if inputTextField.text!.count > 0 {
+            inputTextField.text = (inputTextField.text ?? "") + "+"
+        }
     }
     
     @IBAction func didTapMinusShortcut(_ sender: Any) {
@@ -92,36 +88,24 @@ final class ComputorV1ViewController: UIViewController {
     }
     
     @IBAction func didTapMultiplicationShortcut(_ sender: Any) {
-        inputTextField.text = (inputTextField.text ?? "") + "*"
+        if inputTextField.text!.count > 0 {
+            inputTextField.text = (inputTextField.text ?? "") + "*"
+        }
     }
     
     @IBAction func didTapEqualShortcutWith(_ sender: Any) {
-        inputTextField.text = (inputTextField.text ?? "") + "="
+        if inputTextField.text!.count > 0 {
+            inputTextField.text = (inputTextField.text ?? "") + "="
+        }
     }
     
     @IBAction func calculateButtonAction(_ sender: Any) {
         guard let inputString = inputTextField.text, inputString != "" else { return }
         
+        var solutioner = ComputorV1(delegate: self)
         solutioner.findSolution(input: inputString)
     }
-    
-    func clean() {
-        reducedForm = ""
-        solutionText = ""
-        discriminant = nil
-        polynomialDegree = 0
-        discriminantStatusText = "The solution is:"
-        discriminantStatusLabel.text = ""
-    }
-    
 }
-
-extension Float {
-    var clean: String {
-        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
-    }
-}
-
 
 // MARK: - UITextFieldDelegate
 
@@ -141,10 +125,7 @@ extension ComputorV1ViewController: UITextFieldDelegate {
 
 extension ComputorV1ViewController: ShowResultDelegate {
     func show(redusedForm: String) {
-        var redused = redusedForm
-//        if redused.first == "+" {
-//            redused.removeFirst()
-//        }
+        let redused = redusedForm
         reducedFormLabel.text = reducedFormText + redused
     }
     
@@ -169,19 +150,5 @@ extension ComputorV1ViewController: ShowResultDelegate {
     
     func show(solution: String) {
         solutionsLabel.text = solution
-    }
-}
-
-
-extension String {
-    func countOf(char: Character) -> Int {
-        return self.filter { $0 == char }.count
-    }
-    
-    func splitToString(separator: Character) -> [String] {
-        let arraySubString = self.split(separator: separator)
-        return arraySubString.map { (str) -> String in
-            String(str)
-        }
     }
 }

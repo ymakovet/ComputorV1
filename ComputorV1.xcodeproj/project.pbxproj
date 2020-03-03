@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF37F5F6240583A4000359D9 /* Extension+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF37F5F5240583A4000359D9 /* Extension+Float.swift */; };
 		CF43C28A227DF8C400D98761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C289227DF8C400D98761 /* AppDelegate.swift */; };
 		CF43C28F227DF8C400D98761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C28D227DF8C400D98761 /* Main.storyboard */; };
 		CF43C291227DF8C400D98761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF43C290227DF8C400D98761 /* Assets.xcassets */; };
 		CF43C294227DF8C400D98761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */; };
 		CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */; };
+		CFAC81D2240691AF0089B12F /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAC81D1240691AF0089B12F /* Extension+String.swift */; };
 		CFD05E7323FDAAC900CC6DAE /* Comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD05E7223FDAAC900CC6DAE /* Comp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF37F5F5240583A4000359D9 /* Extension+Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Float.swift"; sourceTree = "<group>"; };
 		CF43C286227DF8C400D98761 /* ComputorV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComputorV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF43C289227DF8C400D98761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF43C28E227DF8C400D98761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		CF43C293227DF8C400D98761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF43C295227DF8C400D98761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputorV1ViewController.swift; sourceTree = "<group>"; };
+		CFAC81D1240691AF0089B12F /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		CFD05E7223FDAAC900CC6DAE /* Comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,12 +63,22 @@
 				CF43C289227DF8C400D98761 /* AppDelegate.swift */,
 				CF43C28D227DF8C400D98761 /* Main.storyboard */,
 				CF43C2B7227DFA6D00D98761 /* ComputorV1ViewController.swift */,
+				CF5BB7E524069E4100C82232 /* Extension */,
 				CFD05E7223FDAAC900CC6DAE /* Comp.swift */,
 				CF43C290227DF8C400D98761 /* Assets.xcassets */,
 				CF43C292227DF8C400D98761 /* LaunchScreen.storyboard */,
 				CF43C295227DF8C400D98761 /* Info.plist */,
 			);
 			path = ComputorV1;
+			sourceTree = "<group>";
+		};
+		CF5BB7E524069E4100C82232 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CFAC81D1240691AF0089B12F /* Extension+String.swift */,
+				CF37F5F5240583A4000359D9 /* Extension+Float.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAC81D2240691AF0089B12F /* Extension+String.swift in Sources */,
 				CFD05E7323FDAAC900CC6DAE /* Comp.swift in Sources */,
 				CF43C2B8227DFA6D00D98761 /* ComputorV1ViewController.swift in Sources */,
+				CF37F5F6240583A4000359D9 /* Extension+Float.swift in Sources */,
 				CF43C28A227DF8C400D98761 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
